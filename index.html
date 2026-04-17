@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CC Computação — Desenvolvimento de software, web, mobile e consultoria em TI." />
+  <title>CC Computação</title>
+
+  <!-- Skip link acessibilidade -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-cc-primary focus:text-white focus:rounded">Saltar para conteúdo</a>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'cc-dark':    '#121212',
+            'cc-surface': '#1e1e1e',
+            'cc-neutral': '#3c3c3c',
+            'cc-primary': '#345996',
+            'cc-alt':     '#4a6da7',
+            'cc-accent':  '#5b8dd9',
+          },
+          fontFamily: {
+            'heading': ['Space Grotesk', 'sans-serif'],
+            'body':    ['Inter', 'sans-serif'],
+            'mono':    ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plh7eqjn8wJJV0/cI+fCqpH0EL+zg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-cc-dark text-cc-text font-body">
+
+  <!-- ==============================
+       NAVBAR
+  ================================= -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" role="banner">
+    <nav class="navbar-inner max-w-7xl mx-auto px-6 py-4 flex items-center justify-between" aria-label="Navegação principal">
+
+      <!-- Logo -->
+      <a href="#inicio" class="flex items-center gap-3 group" aria-label="CC Computação — Página inicial">
+        <img src="assets/images/logo.svg" alt="CC Computação logótipo" class="h-9 w-9" />
+        <span class="font-heading font-bold text-xl text-white group-hover:text-cc-accent transition-colors duration-200">
+          CC <span class="text-cc-accent">Computação</span>
+        </span>
+      </a>
+
+      <!-- Links desktop -->
+      <ul class="hidden md:flex items-center gap-8" role="list">
+        <li><a href="#inicio"    class="nav-link">Início</a></li>
+        <li><a href="#servicos"  class="nav-link">Serviços</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+        <li><a href="#sobre"     class="nav-link">Sobre</a></li>
+        <li>
+          <a href="#contacto" class="btn-primary text-sm px-5 py-2">
+            Contacto
+          </a>
+        </li>
+      </ul>
+
+      <!-- Botão hamburger mobile -->
+      <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-2 rounded focus:outline-none focus:ring-2 focus:ring-cc-accent" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+
+    <!-- Menu mobile -->
+    <div id="mobile-menu" class="mobile-menu md:hidden hidden" role="dialog" aria-label="Menu de navegação mobile">
+      <ul class="flex flex-col px-6 pb-6 gap-4" role="list">
+        <li><a href="#inicio"    class="mobile-nav-link">Início</a></li>
+        <li><a href="#servicos"  class="mobile-nav-link">Serviços</a></li>
+        <li><a href="#portfolio" class="mobile-nav-link">Portfólio</a></li>
+        <li><a href="#sobre"     class="mobile-nav-link">Sobre</a></li>
+        <li><a href="#contacto"  class="mobile-nav-link">Contacto</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ==============================
+         HERO
+    ================================= -->
+    <section id="inicio" class="hero-section min-h-screen flex items-center justify-center relative overflow-hidden" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <span class="section-label animate-on-scroll">Desenvolvimento de Software & TI</span>
+
+        <h1 id="hero-title" class="font-heading font-bold text-5xl md:text-6xl lg:text-7xl text-white mt-4 mb-6 leading-tight animate-on-scroll" style="transition-delay: 0.1s;">
+          Transformamos ideias<br />
+          <span class="text-gradient">em software</span>
+        </h1>
+
+        <p class="text-cc-text-muted text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-on-scroll" style="transition-delay: 0.2s;">
+          Soluções digitais à medida — desde websites e aplicações mobile até sistemas de gestão empresarial e consultoria em TI.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll" style="transition-delay: 0.3s;">
+          <a href="#servicos" class="btn-primary text-base px-8 py-3.5">
+            <i class="fa-solid fa-rocket mr-2" aria-hidden="true"></i>
+            Ver Serviços
+          </a>
+          <a href="#contacto" class="btn-outline text-base px-8 py-3.5">
+            <i class="fa-solid fa-comment-dots mr-2" aria-hidden="true"></i>
+            Falar Comigo
+          </a>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
+          <i class="fa-solid fa-chevron-down text-cc-text-muted text-xl"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         SERVIÇOS
+    ================================= -->
+    <section id="servicos" class="section-padding bg-cc-surface" aria-labelledby="servicos-title">
+      <div class="max-w-7xl mx-auto px-6">
+
+        <div class="section-header animate-on-scroll">
+          <span class="section-label">O QUE FAZEMOS</span>
+          <h2 id="servicos-title" class="section-title">Serviços que oferecemos</h2>
+          <p class="section-subtitle">Cobrimos todas as necessidades tecnológicas do seu negócio, desde a concepção até ao suporte contínuo.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+
+          <!-- Card 1 -->
+          <div class="card animate-on-scroll" style="transition-delay: 0s;">
+            <div class="card-icon">
+              <i class="fa-solid fa-globe" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Desenvolvimento Web</h3>
+            <p class="card-desc">Websites, landing pages e aplicações web modernas, responsivas e otimizadas para desempenho e SEO.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card animate-on-scroll" style="transition-delay: 0.1s;">
+            <div class="card-icon">
+              <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Desenvolvimento Mobile</h3>
+            <p class="card-desc">Aplicações iOS e Android nativas ou multiplataforma com experiência de utilizador fluida e intuitiva.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card animate-on-scroll" style="transition-delay: 0.2s;">
+            <div class="card-icon">
+              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Sistemas de Gestão</h3>
+            <p class="card-desc">Desenvolvimento de ERP, CRM e sistemas customizados para automatizar e optimizar os processos da sua empresa.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card animate-on-scroll" style="transition-delay: 0s;">
+            <div class="card-icon">
+              <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Consultoria em TI</h3>
+            <p class="card-desc">Análise e planeamento estratégico tecnológico para ajudar o seu negócio a crescer com as melhores soluções digitais.</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="card animate-on-scroll" style="transition-delay: 0.1s;">
+            <div class="card-icon">
+              <i class="fa-solid fa-wrench" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Manutenção e Suporte</h3>
+            <p class="card-desc">Suporte técnico contínuo, actualizações e manutenção preventiva para manter os seus sistemas sempre operacionais.</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="card animate-on-scroll" style="transition-delay: 0.2s;">
+            <div class="card-icon">
+              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Segurança Informática</h3>
+            <p class="card-desc">Auditorias de segurança, protecção de dados e implementação de boas práticas para proteger a sua infraestrutura digital.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         PORTFÓLIO
+    ================================= -->
+    <section id="portfolio" class="section-padding bg-cc-dark" aria-labelledby="portfolio-title">
+      <div class="max-w-7xl mx-auto px-6">
+
+        <div class="section-header animate-on-scroll">
+          <span class="section-label">O NOSSO TRABALHO</span>
+          <h2 id="portfolio-title" class="section-title">Portfólio de Projectos</h2>
+          <p class="section-subtitle">Alguns dos projectos que desenvolvemos com dedicação e tecnologia de ponta.</p>
+        </div>
+
+        <!-- Filtros -->
+        <div class="flex flex-wrap justify-center gap-3 mt-10 animate-on-scroll" role="group" aria-label="Filtrar projectos por categoria">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <button class="filter-btn" data-filter="sistemas">Sistemas</button>
+        </div>
+
+        <!-- Grid de projectos -->
+        <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+
+          <!-- Projeto 1 -->
+          <article class="portfolio-item animate-on-scroll" data-category="web" style="transition-delay: 0s;" aria-label="Projecto: Portal Corporativo">
+            <div class="portfolio-image-wrap">
+              <img src="assets/images/portfolio/project1.jpg" alt="Screenshot do Portal Corporativo" class="portfolio-img" loading="lazy" />
+              <div class="portfolio-overlay" aria-hidden="true">
+                <div class="portfolio-overlay-content">
+                  <h3 class="font-heading font-semibold text-lg text-white mb-2">Portal Corporativo</h3>
+                  <div class="flex flex-wrap gap-2 justify-center mb-4">
+                    <span class="tech-badge">HTML</span>
+                    <span class="tech-badge">CSS</span>
+                    <span class="tech-badge">JavaScript</span>
+                  </div>
+                  <a href="#" class="btn-primary text-sm px-4 py-2" aria-label="Ver projecto Portal Corporativo">
+                    <i class="fa-solid fa-arrow-up-right-from-square mr-1" aria-hidden="true"></i>
+                    Ver mais
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3 class="font-heading font-semibold text-white">Portal Corporativo</h3>
+              <p class="text-cc-text-muted text-sm mt-1">Desenvolvimento Web</p>
+            </div>
+          </article>
+
+          <!-- Projeto 2 -->
+          <article class="portfolio-item animate-on-scroll" data-category="mobile" style="transition-delay: 0.1s;" aria-label="Projecto: App de Gestão">
+            <div class="portfolio-image-wrap">
+              <img src="assets/images/portfolio/project2.jpg" alt="Screenshot da App de Gestão" class="portfolio-img" loading="lazy" />
+              <div class="portfolio-overlay" aria-hidden="true">
+                <div class="portfolio-overlay-content">
+                  <h3 class="font-heading font-semibold text-lg text-white mb-2">App de Gestão</h3>
+                  <div class="flex flex-wrap gap-2 justify-center mb-4">
+                    <span class="tech-badge">React Native</span>
+                    <span class="tech-badge">Node.js</span>
+                  </div>
+                  <a href="#" class="btn-primary text-sm px-4 py-2" aria-label="Ver projecto App de Gestão">
+                    <i class="fa-solid fa-arrow-up-right-from-square mr-1" aria-hidden="true"></i>
+                    Ver mais
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3 class="font-heading font-semibold text-white">App de Gestão</h3>
+              <p class="text-cc-text-muted text-sm mt-1">Desenvolvimento Mobile</p>
+            </div>
+          </article>
+
+          <!-- Projeto 3 -->
+          <article class="portfolio-item animate-on-scroll" data-category="sistemas" style="transition-delay: 0.2s;" aria-label="Projecto: Sistema ERP">
+            <div class="portfolio-image-wrap">
+              <img src="assets/images/portfolio/project3.jpg" alt="Screenshot do Sistema ERP" class="portfolio-img" loading="lazy" />
+              <div class="portfolio-overlay" aria-hidden="true">
+                <div class="portfolio-overlay-content">
+                  <h3 class="font-heading font-semibold text-lg text-white mb-2">Sistema ERP</h3>
+                  <div class="flex flex-wrap gap-2 justify-center mb-4">
+                    <span class="tech-badge">PHP</span>
+                    <span class="tech-badge">MySQL</span>
+                    <span class="tech-badge">Vue.js</span>
+                  </div>
+                  <a href="#" class="btn-primary text-sm px-4 py-2" aria-label="Ver projecto Sistema ERP">
+                    <i class="fa-solid fa-arrow-up-right-from-square mr-1" aria-hidden="true"></i>
+                    Ver mais
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3 class="font-heading font-semibold text-white">Sistema ERP</h3>
+              <p class="text-cc-text-muted text-sm mt-1">Sistemas de Gestão</p>
+            </div>
+          </article>
+
+          <!-- Projeto 4 -->
+          <article class="portfolio-item animate-on-scroll" data-category="web" style="transition-delay: 0s;" aria-label="Projecto: Loja Online">
+            <div class="portfolio-image-wrap">
+              <img src="assets/images/portfolio/project4.jpg" alt="Screenshot da Loja Online" class="portfolio-img" loading="lazy" />
+              <div class="portfolio-overlay" aria-hidden="true">
+                <div class="portfolio-overlay-content">
+                  <h3 class="font-heading font-semibold text-lg text-white mb-2">Loja Online</h3>
+                  <div class="flex flex-wrap gap-2 justify-center mb-4">
+                    <span class="tech-badge">Next.js</span>
+                    <span class="tech-badge">Stripe</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                  </div>
+                  <a href="#" class="btn-primary text-sm px-4 py-2" aria-label="Ver projecto Loja Online">
+                    <i class="fa-solid fa-arrow-up-right-from-square mr-1" aria-hidden="true"></i>
+                    Ver mais
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3 class="font-heading font-semibold text-white">Loja Online</h3>
+              <p class="text-cc-text-muted text-sm mt-1">Desenvolvimento Web</p>
+            </div>
+          </article>
+
+          <!-- Projeto 5 -->
+          <article class="portfolio-item animate-on-scroll" data-category="mobile" style="transition-delay: 0.1s;" aria-label="Projecto: App de Delivery">
+            <div class="portfolio-image-wrap">
+              <img src="assets/images/portfolio/project5.jpg" alt="Screenshot da App de Delivery" class="portfolio-img" loading="lazy" />
+              <div class="portfolio-overlay" aria-hidden="true">
+                <div class="portfolio-overlay-content">
+                  <h3 class="font-heading font-semibold text-lg text-white mb-2">App de Delivery</h3>
+                  <div class="flex flex-wrap gap-2 justify-center mb-4">
+                    <span class="tech-badge">Flutter</span>
+                    <span class="tech-badge">Firebase</span>
+                  </div>
+                  <a href="#" class="btn-primary text-sm px-4 py-2" aria-label="Ver projecto App de Delivery">
+                    <i class="fa-solid fa-arrow-up-right-from-square mr-1" aria-hidden="true"></i>
+                    Ver mais
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3 class="font-heading font-semibold text-white">App de Delivery</h3>
+              <p class="text-cc-text-muted text-sm mt-1">Desenvolvimento Mobile</p>
+            </div>
+          </article>
+
+          <!-- Projeto 6 -->
+          <article class="portfolio-item animate-on-scroll" data-category="sistemas" style="transition-delay: 0.2s;" aria-label="Projecto: CRM Imobiliário">
+            <div class="portfolio-image-wrap">
+              <img src="assets/images/portfolio/project6.jpg" alt="Screenshot do CRM Imobiliário" class="portfolio-img" loading="lazy" />
+              <div class="portfolio-overlay" aria-hidden="true">
+                <div class="portfolio-overlay-content">
+                  <h3 class="font-heading font-semibold text-lg text-white mb-2">CRM Imobiliário</h3>
+                  <div class="flex flex-wrap gap-2 justify-center mb-4">
+                    <span class="tech-badge">Laravel</span>
+                    <span class="tech-badge">Livewire</span>
+                    <span class="tech-badge">MySQL</span>
+                  </div>
+                  <a href="#" class="btn-primary text-sm px-4 py-2" aria-label="Ver projecto CRM Imobiliário">
+                    <i class="fa-solid fa-arrow-up-right-from-square mr-1" aria-hidden="true"></i>
+                    Ver mais
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3 class="font-heading font-semibold text-white">CRM Imobiliário</h3>
+              <p class="text-cc-text-muted text-sm mt-1">Sistemas de Gestão</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         SOBRE
+    ================================= -->
+    <section id="sobre" class="section-padding bg-cc-surface" aria-labelledby="sobre-title">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          <!-- Ilustração/Visual -->
+          <div class="flex justify-center animate-on-scroll">
+            <div class="sobre-illustration" aria-hidden="true">
+              <div class="sobre-avatar">
+                <i class="fa-solid fa-user-tie text-6xl text-cc-accent"></i>
+              </div>
+              <!-- Floating badges -->
+              <div class="floating-badge badge-top-right">
+                <i class="fa-solid fa-code mr-1" aria-hidden="true"></i> Dev
+              </div>
+              <div class="floating-badge badge-bottom-left">
+                <i class="fa-solid fa-shield-halved mr-1" aria-hidden="true"></i> Seguro
+              </div>
+            </div>
+          </div>
+
+          <!-- Texto -->
+          <div class="animate-on-scroll" style="transition-delay: 0.15s;">
+            <span class="section-label">SOBRE NÓS</span>
+            <h2 id="sobre-title" class="section-title text-left mt-3">
+              Paixão por tecnologia,<br />foco nos resultados
+            </h2>
+            <p class="text-cc-text-muted leading-relaxed mt-6">
+              A CC Computação nasceu da vontade de criar soluções digitais que fazem a diferença. Com anos de experiência em desenvolvimento de software, ajudamos empresas e empreendedores a transformar as suas ideias em produtos digitais sólidos e escaláveis.
+            </p>
+            <p class="text-cc-text-muted leading-relaxed mt-4">
+              O nosso foco está na qualidade do código, na experiência do utilizador e na entrega pontual — para que o seu negócio cresça sem preocupações tecnológicas.
+            </p>
+
+            <!-- Tecnologias -->
+            <div class="flex flex-wrap gap-2 mt-8" role="list" aria-label="Tecnologias utilizadas">
+              <span class="tech-tag" role="listitem">HTML / CSS</span>
+              <span class="tech-tag" role="listitem">JavaScript</span>
+              <span class="tech-tag" role="listitem">TypeScript</span>
+              <span class="tech-tag" role="listitem">React</span>
+              <span class="tech-tag" role="listitem">Node.js</span>
+              <span class="tech-tag" role="listitem">PHP / Laravel</span>
+              <span class="tech-tag" role="listitem">Flutter</span>
+              <span class="tech-tag" role="listitem">MySQL</span>
+              <span class="tech-tag" role="listitem">PostgreSQL</span>
+              <span class="tech-tag" role="listitem">Docker</span>
+              <span class="tech-tag" role="listitem">Git</span>
+              <span class="tech-tag" role="listitem">Linux</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contadores -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
+          <div class="counter-card animate-on-scroll" style="transition-delay: 0s;">
+            <span class="counter-number" data-target="5" aria-label="5 anos de experiência">0</span>
+            <span class="counter-label">Anos de Experiência</span>
+          </div>
+          <div class="counter-card animate-on-scroll" style="transition-delay: 0.1s;">
+            <span class="counter-number" data-target="40" aria-label="40 projectos concluídos">0</span>
+            <span class="counter-label">Projectos Concluídos</span>
+          </div>
+          <div class="counter-card animate-on-scroll" style="transition-delay: 0.2s;">
+            <span class="counter-number" data-target="30" aria-label="30 clientes satisfeitos">0</span>
+            <span class="counter-label">Clientes Satisfeitos</span>
+          </div>
+          <div class="counter-card animate-on-scroll" style="transition-delay: 0.3s;">
+            <span class="counter-number" data-target="99" aria-label="99% de satisfação">0</span>
+            <span class="counter-label">% de Satisfação</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         TESTEMUNHOS
+    ================================= -->
+    <section id="testemunhos" class="section-padding bg-cc-dark" aria-labelledby="testemunhos-title">
+      <div class="max-w-7xl mx-auto px-6">
+
+        <div class="section-header animate-on-scroll">
+          <span class="section-label">O QUE DIZEM</span>
+          <h2 id="testemunhos-title" class="section-title">Testemunhos de clientes</h2>
+          <p class="section-subtitle">A satisfação dos nossos clientes é o reflexo do nosso compromisso com a qualidade.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+
+          <figure class="testimonial-card animate-on-scroll" style="transition-delay: 0s;">
+            <div class="testimonial-stars" aria-label="5 estrelas">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+            <blockquote class="testimonial-quote">"Trabalho excecional! O nosso site ficou exactamente como imaginávamos. Comunicação impecável e entrega antes do prazo."</blockquote>
+            <figcaption class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">AM</div>
+              <div>
+                <cite class="testimonial-name">Ana Martins</cite>
+                <p class="testimonial-role">Directora, Martins & Associados</p>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial-card animate-on-scroll" style="transition-delay: 0.1s;">
+            <div class="testimonial-stars" aria-label="5 estrelas">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+            <blockquote class="testimonial-quote">"O sistema ERP que desenvolveram para nós reduziu o tempo operacional em 60%. Altamente profissional e técnico."</blockquote>
+            <figcaption class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">JF</div>
+              <div>
+                <cite class="testimonial-name">João Ferreira</cite>
+                <p class="testimonial-role">CEO, Ferreira Logística</p>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial-card animate-on-scroll" style="transition-delay: 0.2s;">
+            <div class="testimonial-stars" aria-label="5 estrelas">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+            <blockquote class="testimonial-quote">"A app mobile superou as nossas expectativas. Os nossos clientes adoram a usabilidade e o design moderno."</blockquote>
+            <figcaption class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">SC</div>
+              <div>
+                <cite class="testimonial-name">Sofia Costa</cite>
+                <p class="testimonial-role">Fundadora, FoodExpress</p>
+              </div>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         CONTACTO
+    ================================= -->
+    <section id="contacto" class="section-padding bg-cc-surface" aria-labelledby="contacto-title">
+      <div class="max-w-7xl mx-auto px-6">
+
+        <div class="section-header animate-on-scroll">
+          <span class="section-label">FALE CONNOSCO</span>
+          <h2 id="contacto-title" class="section-title">Vamos trabalhar juntos</h2>
+          <p class="section-subtitle">Tem um projecto em mente? Fale connosco e dê o primeiro passo.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-14">
+
+          <!-- Formulário -->
+          <div class="animate-on-scroll">
+            <form id="contact-form" class="contact-form" novalidate aria-label="Formulário de contacto">
+              <div class="form-group">
+                <label for="nome" class="form-label">Nome <span aria-hidden="true">*</span></label>
+                <input type="text" id="nome" name="nome" class="form-input" placeholder="O seu nome completo" required aria-required="true" autocomplete="name" />
+                <span class="form-error" id="nome-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email <span aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="o.seu@email.com" required aria-required="true" autocomplete="email" />
+                <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="assunto" class="form-label">Assunto <span aria-hidden="true">*</span></label>
+                <input type="text" id="assunto" name="assunto" class="form-input" placeholder="Desenvolvimento de website, app, etc." required aria-required="true" />
+                <span class="form-error" id="assunto-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="mensagem" class="form-label">Mensagem <span aria-hidden="true">*</span></label>
+                <textarea id="mensagem" name="mensagem" class="form-input resize-none" rows="5" placeholder="Descreva o seu projecto ou dúvida..." required aria-required="true"></textarea>
+                <span class="form-error" id="mensagem-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <button type="submit" id="submit-btn" class="btn-primary w-full py-3.5 text-base mt-2">
+                <span id="btn-text">
+                  <i class="fa-solid fa-paper-plane mr-2" aria-hidden="true"></i>
+                  Enviar Mensagem
+                </span>
+                <span id="btn-loading" class="hidden" aria-live="polite">
+                  <i class="fa-solid fa-circle-notch fa-spin mr-2" aria-hidden="true"></i>
+                  A enviar...
+                </span>
+              </button>
+
+              <div id="form-success" class="form-success hidden" role="alert" aria-live="polite">
+                <i class="fa-solid fa-circle-check mr-2" aria-hidden="true"></i>
+                Mensagem enviada com sucesso! Entraremos em contacto brevemente.
+              </div>
+            </form>
+          </div>
+
+          <!-- Informações de contacto -->
+          <div class="flex flex-col gap-6 animate-on-scroll" style="transition-delay: 0.15s;">
+
+            <a href="mailto:geral@cccomputacao.pt" class="contact-info-item" aria-label="Enviar email para geral@cccomputacao.pt">
+              <div class="contact-info-icon">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="contact-info-label">Email</p>
+                <p class="contact-info-value">geral@cccomputacao.pt</p>
+              </div>
+            </a>
+
+            <a href="tel:+244934527303" class="contact-info-item" aria-label="Ligar para +244 934 527 303">
+              <div class="contact-info-icon">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="contact-info-label">Telefone</p>
+                <p class="contact-info-value">+244 934 527 303</p>
+              </div>
+            </a>
+
+            <a href="https://wa.me/244934527303" class="contact-info-item" target="_blank" rel="noopener noreferrer" aria-label="Contactar via WhatsApp (abre nova janela)">
+              <div class="contact-info-icon" style="background-color: rgba(37,211,102,0.12); color: #25d366;">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="contact-info-label">WhatsApp</p>
+                <p class="contact-info-value">+244 934 527 303</p>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/cccomputacao" class="contact-info-item" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil LinkedIn (abre nova janela)">
+              <div class="contact-info-icon" style="background-color: rgba(10,102,194,0.15); color: #0a66c2;">
+                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="contact-info-label">LinkedIn</p>
+                <p class="contact-info-value">linkedin.com/in/cccomputacao</p>
+              </div>
+            </a>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================
+       FOOTER
+  ================================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-cc-neutral">
+
+        <!-- Logo e tagline -->
+        <div>
+          <a href="#inicio" class="flex items-center gap-3 mb-4" aria-label="CC Computação — Página inicial">
+            <img src="assets/images/logo.svg" alt="" class="h-8 w-8" aria-hidden="true" />
+            <span class="font-heading font-bold text-lg text-white">CC <span class="text-cc-accent">Computação</span></span>
+          </a>
+          <p class="text-cc-text-muted text-sm leading-relaxed">
+            Transformamos ideias em software de qualidade. Especialistas em desenvolvimento web, mobile e sistemas de gestão.
+          </p>
+        </div>
+
+        <!-- Links rápidos -->
+        <nav aria-label="Navegação rodapé">
+          <h3 class="footer-heading">Navegação</h3>
+          <ul class="flex flex-col gap-2" role="list">
+            <li><a href="#inicio"    class="footer-link">Início</a></li>
+            <li><a href="#servicos"  class="footer-link">Serviços</a></li>
+            <li><a href="#portfolio" class="footer-link">Portfólio</a></li>
+            <li><a href="#sobre"     class="footer-link">Sobre</a></li>
+            <li><a href="#contacto"  class="footer-link">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <!-- Redes sociais -->
+        <div>
+          <h3 class="footer-heading">Redes Sociais</h3>
+          <div class="flex gap-3 mt-2" role="list" aria-label="Redes sociais">
+            <a href="https://linkedin.com/in/cccomputacao" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (abre nova janela)" role="listitem">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/cccomputacao" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub (abre nova janela)" role="listitem">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://instagram.com/cccomputacao" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram (abre nova janela)" role="listitem">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/244934527303" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp (abre nova janela)" role="listitem">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-cc-text-muted text-sm">
+        <p>© 2025 CC Computação. Todos os direitos reservados.</p>
+        <span class="hidden sm:inline" aria-hidden="true">·</span>
+        <nav aria-label="Links legais" class="flex gap-4">
+          <a href="pages/politica-privacidade.html" class="hover:text-cc-accent transition-colors duration-200">Política de Privacidade</a>
+          <span aria-hidden="true">·</span>
+          <a href="pages/termos-condicoes.html" class="hover:text-cc-accent transition-colors duration-200">Termos e Condições</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==============================
+       BANNER DE COOKIES
+  ================================= -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Aviso de cookies" aria-live="polite" hidden>
+    <div class="cookie-banner-inner">
+      <div class="cookie-banner-text">
+        <p>
+          <i class="fa-solid fa-cookie-bite mr-2 text-cc-accent" aria-hidden="true"></i>
+          Utilizamos cookies para melhorar a sua experiência e para fins de análise e publicidade (Google Ads / Analytics).
+          Consulte a nossa <a href="pages/politica-privacidade.html" class="text-cc-accent underline hover:text-white transition-colors">Política de Privacidade</a>.
+        </p>
+      </div>
+      <div class="cookie-banner-actions">
+        <button id="cookie-reject" class="cookie-btn-reject">Apenas essenciais</button>
+        <button id="cookie-accept" class="cookie-btn-accept">Aceitar todos</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

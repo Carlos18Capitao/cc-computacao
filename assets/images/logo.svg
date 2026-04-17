@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-label="CC Computação logótipo">
+  <!-- Fundo circular -->
+  <circle cx="24" cy="24" r="22" fill="#345996"/>
+  <!-- Símbolo "<>" estilizado -->
+  <text x="24" y="30" font-family="JetBrains Mono, monospace" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">&lt;/&gt;</text>
+</svg>
