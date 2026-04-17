@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CC Computação - Desenvolvimento de software, soluções TI e consultoria tecnológica.">
+  <title>CC Computação</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    if (window.tailwind) {
+      tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'cc-dark': '#121212',
+            'cc-surface': '#1e1e1e',
+            'cc-neutral': '#3c3c3c',
+            'cc-primary': '#345996',
+            'cc-alt': '#4a6da7',
+            'cc-accent': '#5b8dd9'
+          },
+          fontFamily: {
+            heading: ['Space Grotesk', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            code: ['Fira Code', 'monospace']
+          }
+        }
+      }
+    };
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-cc-dark text-gray-100 font-body">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-cc-primary focus:px-4 focus:py-2 focus:rounded-md">Saltar para conteúdo</a>
+
+  <header class="fixed top-0 left-0 right-0 z-50 border-b border-cc-neutral/70 backdrop-blur-md bg-cc-dark/80">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Navegação principal">
+      <div class="flex h-16 items-center justify-between">
+        <a href="#hero" class="flex items-center gap-2 text-white font-heading font-semibold" aria-label="CC Computação - voltar ao início">
+          <img src="assets/images/logo.svg" alt="" class="h-8 w-8 rounded-md">
+          <span>CC Computação</span>
+        </a>
+
+        <button id="menu-toggle" class="md:hidden rounded-md border border-cc-neutral px-3 py-2" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="block w-5 h-0.5 bg-white mb-1"></span>
+          <span class="block w-5 h-0.5 bg-white mb-1"></span>
+          <span class="block w-5 h-0.5 bg-white"></span>
+        </button>
+
+        <ul class="hidden md:flex items-center gap-6 text-sm">
+          <li><a class="nav-link" href="#hero">Início</a></li>
+          <li><a class="nav-link" href="#servicos">Serviços</a></li>
+          <li><a class="nav-link" href="#portfolio">Portfólio</a></li>
+          <li><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <ul id="mobile-menu" class="md:hidden hidden pb-4 space-y-3 text-sm">
+        <li><a class="nav-link block" href="#hero">Início</a></li>
+        <li><a class="nav-link block" href="#servicos">Serviços</a></li>
+        <li><a class="nav-link block" href="#portfolio">Portfólio</a></li>
+        <li><a class="nav-link block" href="#sobre">Sobre</a></li>
+        <li><a class="nav-link block" href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="pt-16">
+    <section id="hero" class="relative overflow-hidden">
+      <div class="hero-bg absolute inset-0" aria-hidden="true"></div>
+      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+        <p class="section-label animate-on-scroll">BEM-VINDO</p>
+        <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold max-w-3xl animate-on-scroll">Transformamos ideias em software</h1>
+        <p class="mt-6 text-gray-300 max-w-2xl animate-on-scroll">Criamos websites, aplicações e sistemas informáticos robustos para acelerar negócios com soluções tecnológicas seguras.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 animate-on-scroll">
+          <a href="#servicos" class="btn btn-primary">Ver Serviços</a>
+          <a href="#contacto" class="btn btn-outline">Falar Comigo</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="section-label text-center">O QUE FAZEMOS</p>
+        <h2 class="section-title text-center">Serviços</h2>
+        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article class="card animate-on-scroll"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v10H4zM9 19h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3 class="card-title">Desenvolvimento Web</h3><p class="card-desc">Websites e plataformas modernas, rápidas e responsivas.</p></article>
+          <article class="card animate-on-scroll"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="8" y="2" width="8" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M11 18h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h3 class="card-title">Desenvolvimento Mobile</h3><p class="card-desc">Apps móveis focadas em usabilidade e performance.</p></article>
+          <article class="card animate-on-scroll"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h3 class="card-title">Sistemas de Gestão</h3><p class="card-desc">ERP e CRM para otimizar processos e produtividade.</p></article>
+          <article class="card animate-on-scroll"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3 class="card-title">Consultoria em TI</h3><p class="card-desc">Diagnóstico, estratégia e modernização tecnológica.</p></article>
+          <article class="card animate-on-scroll"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v6c0 4.4-3.2 6.8-8 8-4.8-1.2-8-3.6-8-8V7l8-4z" stroke="currentColor" stroke-width="1.8"/><path d="M9.5 12.5l2 2 3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3 class="card-title">Manutenção e Suporte</h3><p class="card-desc">Suporte contínuo para garantir estabilidade operacional.</p></article>
+          <article class="card animate-on-scroll"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.3-2.8 7.4-7 10-4.2-2.6-7-5.7-7-10V6l7-3z" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v4M12 15h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h3 class="card-title">Segurança Informática</h3><p class="card-desc">Boas práticas e medidas para proteger dados e sistemas.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="py-20 bg-cc-surface/60 border-y border-cc-neutral/50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="section-label text-center">TRABALHOS RECENTES</p>
+        <h2 class="section-title text-center">Portfólio</h2>
+
+        <div class="mt-8 flex flex-wrap justify-center gap-3" role="tablist" aria-label="Filtrar portfólio">
+          <button class="filter-btn is-active" data-filter="all" aria-label="Mostrar todos os projectos">Todos</button>
+          <button class="filter-btn" data-filter="web" aria-label="Mostrar projectos web">Web</button>
+          <button class="filter-btn" data-filter="mobile" aria-label="Mostrar projectos mobile">Mobile</button>
+          <button class="filter-btn" data-filter="sistemas" aria-label="Mostrar projectos de sistemas">Sistemas</button>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article class="portfolio-item animate-on-scroll" data-category="web">
+            <img src="assets/images/portfolio/projeto-web.svg" alt="Dashboard web empresarial" loading="lazy">
+            <div class="portfolio-overlay"><h3>Portal Empresarial</h3><p class="font-code text-xs">HTML · CSS · JavaScript</p><a href="#" aria-label="Ver mais sobre Portal Empresarial">Ver mais</a></div>
+          </article>
+          <article class="portfolio-item animate-on-scroll" data-category="mobile">
+            <img src="assets/images/portfolio/projeto-mobile.svg" alt="Aplicação mobile de serviços" loading="lazy">
+            <div class="portfolio-overlay"><h3>App de Serviços</h3><p class="font-code text-xs">Flutter · API REST</p><a href="#" aria-label="Ver mais sobre App de Serviços">Ver mais</a></div>
+          </article>
+          <article class="portfolio-item animate-on-scroll" data-category="sistemas">
+            <img src="assets/images/portfolio/projeto-sistemas.svg" alt="Sistema de gestão e relatórios" loading="lazy">
+            <div class="portfolio-overlay"><h3>Sistema de Gestão</h3><p class="font-code text-xs">Node.js · PostgreSQL</p><a href="#" aria-label="Ver mais sobre Sistema de Gestão">Ver mais</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-10 md:grid-cols-2 md:items-center">
+        <img src="assets/images/sobre-equipa.svg" alt="Equipa da CC Computação" class="rounded-xl border border-cc-neutral/70">
+        <div>
+          <p class="section-label">QUEM SOMOS</p>
+          <h2 class="section-title text-left">Sobre a CC Computação</h2>
+          <p class="mt-4 text-gray-300">Ajudamos empresas e empreendedores a transformar ideias em produtos digitais funcionais, escaláveis e seguros.</p>
+          <ul class="mt-6 flex flex-wrap gap-2">
+            <li class="tech-tag">JavaScript</li>
+            <li class="tech-tag">PHP</li>
+            <li class="tech-tag">Python</li>
+            <li class="tech-tag">SQL</li>
+            <li class="tech-tag">Cloud</li>
+          </ul>
+          <div class="mt-8 grid grid-cols-3 gap-4">
+            <div><p class="counter" data-target="8">0</p><p class="counter-label">Anos</p></div>
+            <div><p class="counter" data-target="120">0</p><p class="counter-label">Projectos</p></div>
+            <div><p class="counter" data-target="45">0</p><p class="counter-label">Clientes</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testemunhos" class="py-20 bg-cc-surface/60 border-y border-cc-neutral/50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="section-label text-center">FEEDBACK</p>
+        <h2 class="section-title text-center">Testemunhos</h2>
+        <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article class="card animate-on-scroll"><p class="card-desc">“Profissionalismo e entrega rápida. O nosso sistema ficou muito mais eficiente.”</p><h3 class="card-title mt-4 text-base">Ana Martins</h3><p class="text-sm text-gray-400">Gestora Operacional</p></article>
+          <article class="card animate-on-scroll"><p class="card-desc">“A nova plataforma web aumentou os pedidos em poucas semanas.”</p><h3 class="card-title mt-4 text-base">Ricardo Silva</h3><p class="text-sm text-gray-400">Director Comercial</p></article>
+          <article class="card animate-on-scroll"><p class="card-desc">“Excelente suporte técnico e comunicação em todas as etapas.”</p><h3 class="card-title mt-4 text-base">Marta Costa</h3><p class="text-sm text-gray-400">CEO Startup</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-8 lg:grid-cols-2">
+        <div>
+          <p class="section-label">VAMOS CONVERSAR</p>
+          <h2 class="section-title text-left">Contacto</h2>
+          <p class="mt-4 text-gray-300">Partilhe o seu desafio e receba uma proposta ajustada ao seu projecto.</p>
+          <ul class="mt-6 space-y-2 text-gray-300">
+            <li><strong>Email:</strong> contacto@cccomputacao.pt</li>
+            <li><strong>Telefone:</strong> +351 900 000 000</li>
+            <li><strong>WhatsApp:</strong> +351 900 000 000</li>
+            <li><strong>LinkedIn:</strong> linkedin.com/company/cc-computacao</li>
+          </ul>
+        </div>
+        <form id="contact-form" class="space-y-4 p-6 rounded-xl border border-cc-neutral bg-cc-surface/70" novalidate>
+          <div>
+            <label for="nome" class="form-label">Nome</label>
+            <input id="nome" name="nome" type="text" class="form-input" required>
+          </div>
+          <div>
+            <label for="email" class="form-label">Email</label>
+            <input id="email" name="email" type="email" class="form-input" required>
+          </div>
+          <div>
+            <label for="assunto" class="form-label">Assunto</label>
+            <input id="assunto" name="assunto" type="text" class="form-input" required>
+          </div>
+          <div>
+            <label for="mensagem" class="form-label">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" class="form-input" required></textarea>
+          </div>
+          <button id="submit-btn" type="submit" class="btn btn-primary w-full" aria-label="Enviar formulário de contacto">Enviar mensagem</button>
+          <p id="form-feedback" class="text-sm text-gray-300" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-cc-neutral/70 py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-6 md:grid-cols-3">
+      <div>
+        <p class="font-heading font-semibold">CC Computação</p>
+        <p class="text-sm text-gray-400 mt-2">Soluções digitais para crescer com tecnologia.</p>
+      </div>
+      <div>
+        <p class="font-semibold mb-2">Navegação rápida</p>
+        <ul class="space-y-1 text-sm text-gray-400">
+          <li><a class="nav-link" href="#servicos">Serviços</a></li>
+          <li><a class="nav-link" href="#portfolio">Portfólio</a></li>
+          <li><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold mb-2">Redes sociais</p>
+        <div class="flex gap-3 text-sm text-gray-400">
+          <a class="nav-link" href="#" aria-label="Visitar LinkedIn">LinkedIn</a>
+          <a class="nav-link" href="#" aria-label="Visitar GitHub">GitHub</a>
+          <a class="nav-link" href="#" aria-label="Visitar Instagram">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-sm text-gray-500 mt-8">© 2025 CC Computação. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
