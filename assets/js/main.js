@@ -107,6 +107,7 @@ if (contactForm && submitButton && feedback && emailInput) {
     submitButton.textContent = 'A enviar...';
     feedback.textContent = '';
 
+    // Simulação de envio; substituir por integração real (API/email) no backend.
     setTimeout(() => {
       feedback.textContent = 'Mensagem enviada com sucesso. Obrigado pelo contacto!';
       submitButton.disabled = false;
