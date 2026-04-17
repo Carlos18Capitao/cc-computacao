@@ -57,6 +57,7 @@ const counterObserver = new IntersectionObserver((entries) => {
     const counter = entry.target;
     const target = Number(counter.dataset.target);
     let current = 0;
+    // Divide em ~45 passos para manter a animação fluida e curta.
     const increment = Math.max(1, Math.ceil(target / 45));
 
     const updateCounter = () => {
@@ -80,8 +81,9 @@ counters.forEach((counter) => counterObserver.observe(counter));
 const contactForm = document.getElementById('contact-form');
 const submitButton = document.getElementById('submit-btn');
 const feedback = document.getElementById('form-feedback');
+const emailInput = document.getElementById('email');
 
-if (contactForm && submitButton && feedback) {
+if (contactForm && submitButton && feedback && emailInput) {
   contactForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
@@ -96,8 +98,7 @@ if (contactForm && submitButton && feedback) {
       return;
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    if (!emailInput.checkValidity()) {
       feedback.textContent = 'Por favor, introduza um email válido.';
       return;
     }
